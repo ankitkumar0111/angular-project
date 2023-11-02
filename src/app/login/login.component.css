@@ -1,0 +1,175 @@
+
+
+/* .navbar{
+    border: 1px solid black;
+    background-color: black;
+}
+
+.logo-image{
+   padding-left: 20%;
+} */
+
+
+
+.container{
+    text-align: center;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    width: 50%;
+    height: 600px;
+    margin:50px auto;
+    /* margin-top: 50px; */
+}
+
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+p{
+    font-size: 25px;
+    padding-left: 22px;
+}
+
+a{
+    text-decoration: none;
+    padding-right: 20px;
+    font-size: 17px;
+}
+
+.login-form{
+    width: 90%;
+    margin: 10px auto;
+}
+
+.login-email{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    padding: 15px;
+    /* margin-bottom: 15px; */
+}
+.login-email i{
+    margin-right: 15px;
+}
+
+ .login-email input{
+    border: none;
+    width: 100%;
+}
+
+.checkbox1{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+.login-password{
+    display: flex;
+    flex-direction: row;
+    /* align-items: start; */
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 15px;
+    /* margin-bottom: 20px; */
+    /* height: 500px; */
+}
+
+.login-password i{
+    /* width: %; */
+    margin-right: 15px;
+}
+
+.login-password input{
+    border: none;
+    width: 80%;
+}
+
+.login-password button{
+    color: blueviolet;
+    width: 20%;
+    border: none;
+    background: none ;
+}
+.login-help a{
+    display: flex;
+    justify-content: end;
+    padding-right: 0px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    color: #0A7099;
+}
+
+.continue-button{
+    border:1px solid black;
+    width: 100%;
+    padding: 10px;
+    background-color: #066690;
+    color: white;
+    margin-bottom: 40px;
+}
+
+
+
+.horizontal-line-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .horizontal-line {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid black;
+    margin: 0 10px;
+  }
+  
+  .text {
+    font-size: 18px;
+    /* font-weight: bold; */
+  }
+
+  .login-text{
+    margin-bottom: 40px;
+  }
+
+  .image-links{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image-links a{
+    width: 28%;
+    border: 1px solid grey;
+    padding: 10px 0px;
+    border-radius: 8px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.validations{
+    text-align: start;
+    color: red;
+}
+
+.bottom-content{
+    display: none;
+}
+
+/* .image-links i{
+
+} */
+
+
+
+
+
+
+
+
