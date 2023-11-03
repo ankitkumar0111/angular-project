@@ -5,7 +5,7 @@
       <p>Log in</p>
       <a href="">Register</a>
     </div>
-    <form class="login-form" >
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="login-email">
         <i class="fa-solid fa-envelope"></i>
         <input

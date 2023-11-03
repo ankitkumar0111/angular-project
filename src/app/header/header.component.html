@@ -12,8 +12,20 @@
       <li><a  routerLink="/track">Track Transfer</a></li>
       <li><a  routerLink="/track">Find Locations</a></li>
       <li><a  routerLink="/track">Help</a></li>
-      <li  >menu</li>
-      <li  >
+      <!-- <li></li> -->
+      <li>
+        <div class="menu-icon" (click)="toggleMenu()" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+          <i class="fa-solid fa-bars" style="color: #f0f25f;"></i>
+          <!-- <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div> -->
+        </div>
+        <ul class="dropdown-menu" [ngClass]="{'active' : dropdownOpen}">
+          <li><a href="#">My Receiver</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </li>
+      <li>
           <i>b</i>
           <a href="#">Test</a>
           <a href="/">Log out</a>

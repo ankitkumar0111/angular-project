@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   changeHeader: boolean = true;
+  dropdownOpen : boolean = false;
   constructor(private route: Router) { }
  
   ngOnInit(): void {
@@ -28,5 +29,17 @@ export class HeaderComponent implements OnInit {
      
     })
 
+}
+
+toggleMenu(){
+  this.dropdownOpen = !this.dropdownOpen;
+}
+
+showDropdown(){
+  this.dropdownOpen = true;
+}
+
+hideDropdown(){
+  this.dropdownOpen = false
 }
 }

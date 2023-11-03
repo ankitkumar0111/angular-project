@@ -11,6 +11,10 @@ export class LoginComponent implements OnInit {
   loginForm : FormGroup ;
   showPassword: boolean = false;
 
+  dummyEmail = "dummy@gmail.com";
+  dummyPassword = "dummy"
+
+
   constructor(
     private formBuilder: FormBuilder  ) {
     
@@ -43,6 +47,15 @@ export class LoginComponent implements OnInit {
       return;
     }
     const formData = this.loginForm.value;
+    console.log("formdata", formData);
+    
+    if(formData.email === this.dummyEmail && formData.password === this.dummyPassword){
+      alert("Login Successfull")
+      sessionStorage.setItem("isLogged", "true")
+    }
+    else{
+      alert("Invalid credentials")
+    }
   }
 
 }
