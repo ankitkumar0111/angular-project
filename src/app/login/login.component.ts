@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
     
     if(formData.email === this.dummyEmail && formData.password === this.dummyPassword){
       alert("Login Successfull")
-      sessionStorage.setItem("isLogged", "true")
+      sessionStorage.setItem("loggedIn", "true")
     }
     else{
       alert("Invalid credentials")
