@@ -1,0 +1,22 @@
+<form [formGroup]="receiverForm" (ngSubmit)="onSubmit()">
+    <label for="country">Select Country</label>
+    <select formControlName="country" id="country" (change)="onCountryChange()">
+      <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+    </select>
+  
+    <div *ngIf="receiverForm.get('country').value">
+      <label for="firstName" *ngIf="receiverForm.get('firstName').enabled">First Name</label>
+      <input formControlName="firstName" id="firstName" *ngIf="receiverForm.get('firstName').enabled">
+  
+      <label for="middleName" *ngIf="receiverForm.get('middleName').enabled">Middle Name</label>
+      <input formControlName="middleName" id="middleName" *ngIf="receiverForm.get('middleName').enabled">
+  
+      <label for="lastName" *ngIf="receiverForm.get('lastName').enabled">Last Name</label>
+      <input formControlName="lastName" id="lastName" *ngIf="receiverForm.get('lastName').enabled">
+  
+      <label for="address" *ngIf="receiverForm.get('address').enabled">Address</label>
+      <input formControlName="address" id="address"*ngIf="receiverForm.get('address').enabled">
+    </div>
+  
+    <button type="submit">Save</button>
+  </form>

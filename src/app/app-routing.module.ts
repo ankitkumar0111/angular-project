@@ -4,16 +4,17 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MyReceiverComponent } from './my-receiver/my-receiver.component';
 import { AuthGuard } from './auth.guard';
+import { AddReceiverComponent } from './add-receiver/add-receiver.component';
 
 
 const routes: Routes = [
-  // {
-  //   path:'',
-  //   redirectTo:'/login',
-  //   pathMatch:'full'
-  // },
   {
     path:'',
+    redirectTo:'/home',
+    pathMatch:'full'
+  },
+  {
+    path:'home',
     component:HomeComponent
   },
   {
@@ -21,9 +22,17 @@ const routes: Routes = [
     component:LoginComponent
   },
   {
-    path:'my-receiver',
+    path:'myreceiver',
     component: MyReceiverComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    // children: [
+    //   { path: 'add', component: AddReceiverComponent },
+    // ]
+  },
+  {
+    path:'add',
+    component: AddReceiverComponent,
+    canActivate: [AuthGuard],
   }
 ];
 

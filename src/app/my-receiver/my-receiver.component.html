@@ -2,3 +2,5 @@
 <ul>
   <li *ngFor="let receiver of receivers">{{ receiver.firstName }} {{ receiver.lastName }}</li>
 </ul>
+
+<button (click)="navigateToAddReceiver()">Add Receiver</button>

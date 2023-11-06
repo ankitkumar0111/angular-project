@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyReceiverComponent } from './my-receiver/my-receiver.component';
+import { AddReceiverComponent } from './add-receiver/add-receiver.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,14 +18,16 @@ import { MyReceiverComponent } from './my-receiver/my-receiver.component';
     HeaderComponent,
     LoginComponent,
     HomeComponent,
-    MyReceiverComponent
+    MyReceiverComponent,
+    AddReceiverComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule,
+    RouterModule.forRoot([]), 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

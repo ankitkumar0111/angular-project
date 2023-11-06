@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReceiverService } from '../receiver.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-receiver',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyReceiverComponent implements OnInit {
 
-  constructor() { }
+  receivers: any[];
 
-  ngOnInit(): void {
+  constructor(private receiverService: ReceiverService,private router: Router) {}
+
+  ngOnInit() {
+    this.receiverService.getReceivers().subscribe(receivers => {
+      this.receivers = receivers;
+    });
+  }
+
+  navigateToAddReceiver() {
+    this.router.navigate(['/add']);
   }
 
 }

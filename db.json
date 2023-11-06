@@ -1,0 +1,45 @@
+{
+  "countries": [
+    {
+      "id": 1,
+      "name": "USA",
+      "fields": [
+        "firstName",
+        "lastName",
+        "address"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "India",
+      "fields": [
+        "firstName",
+        "middleName",
+        "lastName",
+        "address"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Other Country",
+      "fields": [
+        "firstName",
+        "lastName"
+      ]
+    }
+  ],
+  "receivers": [
+    {
+      "country": "Other Country",
+      "firstName": "Ankit",
+      "lastName": "Singh",
+      "id": 1
+    },
+    {
+      "country": "Other Country",
+      "firstName": "Ankit",
+      "lastName": "Singh",
+      "id": 2
+    }
+  ]
+}

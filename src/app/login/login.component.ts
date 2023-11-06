@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
 
   constructor(
-    private formBuilder: FormBuilder  ) {
+    private formBuilder: FormBuilder, private router: Router  ) {
     
   }
 
@@ -50,8 +50,10 @@ export class LoginComponent implements OnInit {
     console.log("formdata", formData);
     
     if(formData.email === this.dummyEmail && formData.password === this.dummyPassword){
+      this.router.navigate(['/home']);
       alert("Login Successfull")
       sessionStorage.setItem("loggedIn", "true")
+      // this.router.navigate(['/home']);
     }
     else{
       alert("Invalid credentials")
