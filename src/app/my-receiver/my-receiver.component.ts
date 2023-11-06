@@ -23,4 +23,12 @@ export class MyReceiverComponent implements OnInit {
     this.router.navigate(['/add']);
   }
 
+  deleteReceiver(receiverId: number) {
+    this.receivers = this.receivers.filter(receiver => receiver.id !== receiverId);
+
+    this.receiverService.deleteReceiver(receiverId).subscribe(response => {
+      console.log(`Receiver with ID ${receiverId} deleted successfully.`);
+    });
+  }
+
 }

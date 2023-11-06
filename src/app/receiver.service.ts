@@ -21,4 +21,8 @@ export class ReceiverService {
   getReceivers(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/receivers`);
   }
+
+  deleteReceiver(receiverId: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/receivers/${receiverId}`);
+  }
 }

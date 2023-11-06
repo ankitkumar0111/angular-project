@@ -4,25 +4,32 @@
       "id": 1,
       "name": "USA",
       "fields": [
+        "type",
+        "countryCode",
+        "phoneNumber",
         "firstName",
-        "lastName",
-        "address"
+        "lastName"
       ]
     },
     {
       "id": 2,
       "name": "India",
       "fields": [
+        "type",
+        "countryCode",
+        "phoneNumber",
         "firstName",
         "middleName",
-        "lastName",
-        "address"
+        "lastName"
       ]
     },
     {
       "id": 3,
       "name": "Other Country",
       "fields": [
+        "type",
+        "countryCode",
+        "phoneNumber",
         "firstName",
         "lastName"
       ]
@@ -42,9 +49,12 @@
       "id": 2
     },
     {
-      "country": "Other Country",
+      "country": "USA",
+      "type": "mobile",
+      "countryCode": "+91",
+      "phoneNumber": "7579312081",
       "firstName": "Ankit",
-      "lastName": "Kumar",
+      "lastName": "Singh",
       "id": 3
     }
   ]

@@ -1,22 +1,47 @@
+<!-- add-receiver.component.html -->
+<div class="container">
+  <p class="p-1">Receivers's Information</p>
+  <p class="p-2">For your safety, make sure you know your receiver</p>
 <form [formGroup]="receiverForm" (ngSubmit)="onSubmit()">
-    <label for="country">Select Country</label>
-    <select formControlName="country" id="country" (change)="onCountryChange()">
-      <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
-    </select>
+
+  <!-- <label for="country">Select Country</label> -->
   
-    <div *ngIf="receiverForm.get('country').value">
-      <label for="firstName" *ngIf="receiverForm.get('firstName').enabled">First Name</label>
-      <input formControlName="firstName" id="firstName" *ngIf="receiverForm.get('firstName').enabled">
+  <select formControlName="country" id="country" (change)="onCountryChange()">
+    
+    <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+  </select>
+
+
+  <!-- <label for="firstName">First Name</label> -->
+  <input formControlName="firstName" id="firstName" placeholder="Receiver's first name"  *ngIf="receiverForm.get('firstName').enabled">
+
+  <!-- <label for="middleName" *ngIf="receiverForm.get('middleName').enabled">Middle Name</label> -->
+  <input formControlName="middleName" id="middleName" placeholder="Receiver's middle name(optional)"  *ngIf="receiverForm.get('middleName').enabled">
+
+  <!-- <label for="lastName" *ngIf="receiverForm.get('lastName').enabled">Last Name</label> -->
+  <input formControlName="lastName" id="lastName" placeholder="Receiver's last name"  *ngIf="receiverForm.get('lastName').enabled">
+
+ 
+
+  <!-- <label for="type">Type</label> -->
+  <select formControlName="type" id="type">
+    <option value="mobile">Mobile</option>
+    <option value="phone">Phone</option>
+  </select>
+
+  <!-- <label for="countryCode">Country Code</label> -->
+  <select formControlName="countryCode" id="countryCode">
+    
+    <option value="+91">+91</option>
+    <option value="+12">+12</option>
+    <option value="+22">+22</option>
+    <!-- Add more options as needed -->
+  </select>
+
   
-      <label for="middleName" *ngIf="receiverForm.get('middleName').enabled">Middle Name</label>
-      <input formControlName="middleName" id="middleName" *ngIf="receiverForm.get('middleName').enabled">
-  
-      <label for="lastName" *ngIf="receiverForm.get('lastName').enabled">Last Name</label>
-      <input formControlName="lastName" id="lastName" *ngIf="receiverForm.get('lastName').enabled">
-  
-      <label for="address" *ngIf="receiverForm.get('address').enabled">Address</label>
-      <input formControlName="address" id="address"*ngIf="receiverForm.get('address').enabled">
-    </div>
-  
-    <button type="submit">Save</button>
-  </form>
+  <!-- <label for="phoneNumber">Phone Number</label> -->
+  <input formControlName="phoneNumber" id="phoneNumber" placeholder="Phone number(optional)" >
+
+  <button type="submit">Save</button>
+</form>
+</div>

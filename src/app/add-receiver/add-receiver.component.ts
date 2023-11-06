@@ -18,15 +18,24 @@ export class AddReceiverComponent implements OnInit {
   ngOnInit() {
     this.receiverForm = this.fb.group({
       country: ['', Validators.required],
+      type: [''], // Dropdown for type
+      countryCode: [''], // Dropdown for countryCode
+      phoneNumber: [''], // Add phoneNumber control
       firstName: [''],
       middleName: [''],
-      lastName: [''],
-      address: ['']
+      lastName: ['']
     });
 
     this.receiverService.getCountries().subscribe(countries => {
       this.countries = countries;
     });
+
+    this.receiverForm.get('type').disable();
+    this.receiverForm.get('countryCode').disable();
+    this.receiverForm.get('phoneNumber').disable();
+    this.receiverForm.get('firstName').disable();
+    this.receiverForm.get('middleName').disable();
+    this.receiverForm.get('lastName').disable();
   }
 
   // Method to handle form submission
@@ -44,11 +53,15 @@ export class AddReceiverComponent implements OnInit {
     const countryDetails = this.countries.find(country => country.name === selectedCountry);
 
     // Enable/disable form controls based on selected country
-    const controls = ['firstName', 'middleName', 'lastName', 'address'];
-    controls.forEach(control => {
-      if (countryDetails.fields.includes(control)) {
-        this.receiverForm.get(control).enable();
-      } else {
+    const controlsToEnable = countryDetails.fields;
+    controlsToEnable.forEach(control => {
+      this.receiverForm.get(control).enable();
+    });
+
+    // Disable remaining form controls
+    const controlsToDisable = ['type', 'countryCode', 'phoneNumber', 'firstName', 'middleName', 'lastName'];
+    controlsToDisable.forEach(control => {
+      if (!controlsToEnable.includes(control)) {
         this.receiverForm.get(control).disable();
       }
     });
