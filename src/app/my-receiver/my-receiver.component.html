@@ -1,6 +1,15 @@
-<h2>My Receivers</h2>
+<div class="container">
+<p>Receivers</p>
 <ul>
-  <li *ngFor="let receiver of receivers">{{ receiver.firstName }} {{ receiver.lastName }}</li>
+  <li *ngFor="let receiver of receivers">
+    <p>{{ receiver.firstName }} {{ receiver.lastName }}</p> 
+    <div class="buttons">
+      <i class="fa-regular fa-pen-to-square" style="color: #679bf4;"></i>
+      <i class="fa-solid fa-trash"  style="color: #679bf4;"></i>
+     </div>
+  </li>
 </ul>
 
-<button (click)="navigateToAddReceiver()">Add Receiver</button>
+
+<button class="add-button" (click)="navigateToAddReceiver()">Add Receiver</button>
+</div>

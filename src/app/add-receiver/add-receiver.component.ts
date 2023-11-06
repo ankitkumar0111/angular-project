@@ -35,7 +35,7 @@ export class AddReceiverComponent implements OnInit {
     this.receiverService.postReceiver(receiverData).subscribe(response => {
       // Handle response if needed
     });
-    this.router.navigate(["/myreceiver"])
+    // this.router.navigate(["/myreceiver"])
   }
 
   // Method to handle changes in selected country
