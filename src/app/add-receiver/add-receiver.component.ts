@@ -38,33 +38,37 @@ export class AddReceiverComponent implements OnInit {
     this.receiverForm.get('lastName').disable();
   }
 
-  // Method to handle form submission
+
   onSubmit() {
     const receiverData = this.receiverForm.value;
     this.receiverService.postReceiver(receiverData).subscribe(response => {
-      // Handle response if needed
+      
     });
-    // this.router.navigate(["/myreceiver"])
+    this.router.navigate(["/myreceiver"])
   }
 
-  // Method to handle changes in selected country
+
   onCountryChange() {
     const selectedCountry = this.receiverForm.get('country').value;
     const countryDetails = this.countries.find(country => country.name === selectedCountry);
 
-    // Enable/disable form controls based on selected country
+   
     const controlsToEnable = countryDetails.fields;
     controlsToEnable.forEach(control => {
       this.receiverForm.get(control).enable();
     });
 
-    // Disable remaining form controls
+
     const controlsToDisable = ['type', 'countryCode', 'phoneNumber', 'firstName', 'middleName', 'lastName'];
     controlsToDisable.forEach(control => {
       if (!controlsToEnable.includes(control)) {
         this.receiverForm.get(control).disable();
       }
     });
+  }
+
+  navigateToMyReceiver(){
+    this.router.navigate(['/myreceiver']);
   }
 
 }

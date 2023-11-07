@@ -37,25 +37,22 @@
   ],
   "receivers": [
     {
-      "country": "Other Country",
-      "firstName": "Ankit",
-      "lastName": "Singh",
+      "country": "USA",
+      "type": "mobile",
+      "countryCode": "+12",
+      "phoneNumber": "1234567890",
+      "firstName": "Ashok",
+      "lastName": "Kumar",
       "id": 1
     },
     {
       "country": "Other Country",
-      "firstName": "Ankit",
-      "lastName": "Singh",
-      "id": 2
-    },
-    {
-      "country": "USA",
       "type": "mobile",
       "countryCode": "+91",
-      "phoneNumber": "7579312081",
-      "firstName": "Ankit",
-      "lastName": "Singh",
-      "id": 3
+      "phoneNumber": "6321762778",
+      "firstName": "Sagar",
+      "lastName": "Jha",
+      "id": 2
     }
   ]
 }
