@@ -8,38 +8,21 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  changeHeader: boolean = true;
-  dropdownOpen : boolean = false;
-  constructor(private route: Router) { }
- 
-  ngOnInit(): void {
-    this.route.events.subscribe((val: any) => {
-      // to check if url is not undefined
-      if (val.url) {
-        if(val.url==='/login' ){
-        this.changeHeader=true;
-        console.log(val.url);
-        console.log(this.changeHeader);
-        }else{
-          this.changeHeader=false;
-          // console.log(val.url);
-          // console.log(this.changeHeader);
-        }
-      }
-     
-    })
+  changeHeader: boolean = false;
 
-}
+  constructor(private router: Router) {}
 
-toggleMenu(){
-  this.dropdownOpen = !this.dropdownOpen;
-}
+  ngOnInit() {
+    // Check if the user is logged in (you may have your own logic for this)
+    const loggedIn = sessionStorage.getItem('loggedIn');
+    this.changeHeader = !loggedIn;
+  }
 
-showDropdown(){
-  this.dropdownOpen = true;
-}
-
-hideDropdown(){
-  this.dropdownOpen = false
-}
+  logout() {
+    // Perform logout logic here
+    // For example, clear session storage and navigate to home page
+    sessionStorage.setItem('loggedIn', 'false');
+    this.router.navigate(['/home']); // Assuming '/' is your home route
+    this.changeHeader = true; // Change the header after logout
+  }
 }
