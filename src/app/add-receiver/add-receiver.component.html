@@ -11,6 +11,8 @@
     <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
   </select>
 
+  <h2>Receivers's Personal Information</h2>
+
 <div class="names-1">
   <!-- <label for="firstName">First Name</label> -->
   <input formControlName="firstName" id="firstName" placeholder="Receiver's first name"  *ngIf="receiverForm.get('firstName').enabled">
