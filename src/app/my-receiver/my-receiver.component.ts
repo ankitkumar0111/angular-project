@@ -23,6 +23,10 @@ export class MyReceiverComponent implements OnInit {
     this.router.navigate(['/add']);
   }
 
+  editReceiver(receiverId: number) {
+    this.router.navigate(['/edit-receiver', receiverId]);
+  }
+
   deleteReceiver(receiverId: number) {
     this.receivers = this.receivers.filter(receiver => receiver.id !== receiverId);
 

@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { MyReceiverComponent } from './my-receiver/my-receiver.component';
 import { AuthGuard } from './auth.guard';
 import { AddReceiverComponent } from './add-receiver/add-receiver.component';
+import { EditReceiverComponent } from './edit-receiver/edit-receiver.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,13 @@ const routes: Routes = [
     path:'add',
     component: AddReceiverComponent,
     canActivate: [AuthGuard],
-  }
+  },
+  // ... other routes
+  { 
+    path: 'edit-receiver/:id',
+   component: EditReceiverComponent,
+   canActivate: [AuthGuard]
+   }
 ];
 
 @NgModule({
