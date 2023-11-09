@@ -11,7 +11,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyReceiverComponent } from './my-receiver/my-receiver.component';
 import { AddReceiverComponent } from './add-receiver/add-receiver.component';
 import { HttpClientModule } from '@angular/common/http';
-import { EditReceiverComponent } from './edit-receiver/edit-receiver.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { EditReceiverComponent } from './edit-receiver/edit-receiver.component';
     LoginComponent,
     HomeComponent,
     MyReceiverComponent,
-    AddReceiverComponent,
-    EditReceiverComponent
+    AddReceiverComponent
   ],
   imports: [
     BrowserModule,
