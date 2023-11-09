@@ -27,6 +27,7 @@ export class EditReceiverComponent implements OnInit {
     this.receiverService.getCountries().subscribe(countries => {
       this.countries = countries;
     });
+    
 
     this.receiverService.getReceiver(this.receiverId).subscribe(receiver => {
       this.receiverData = receiver;
@@ -40,9 +41,9 @@ export class EditReceiverComponent implements OnInit {
       type: [this.receiverData.type],
       countryCode: [this.receiverData.countryCode],
       phoneNumber: [this.receiverData.phoneNumber],
-      firstName: [this.receiverData.firstName],
-      middleName: [this.receiverData.middleName],
-      lastName: [this.receiverData.lastName]
+      firstName: [this.receiverData.firstName,  Validators.required],
+      middleName: [this.receiverData.middleName,  Validators.required],
+      lastName: [this.receiverData.lastName,  Validators.required]
     });
   }
 
