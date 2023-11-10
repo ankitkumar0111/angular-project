@@ -4,8 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MyReceiverComponent } from './my-receiver/my-receiver.component';
 import { AuthGuard } from './auth.guard';
-import { AddReceiverComponent } from './add-receiver/add-receiver.component';
 import { EditReceiverComponent } from './edit-receiver/edit-receiver.component';
+import { AddReceiverComponent } from './add-receiver/add-receiver.component';
 
 
 const routes: Routes = [
