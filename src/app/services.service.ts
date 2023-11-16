@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ServicesService {
 
-  private apiUrl = 'http://localhost:3000/'; // Replace with your JSON server URL
+  private apiUrl = 'http://localhost:3000/'; 
 
   constructor(private http: HttpClient) {}
 
@@ -21,5 +21,17 @@ export class ServicesService {
 
   getReceivers(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/receivers`);
+  }
+
+  deleteReceiver(receiverId: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/receivers/${receiverId}`);
+  }
+
+  getReceiver(receiverId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/receivers/${receiverId}`);
+  }
+
+  updateReceiver(receiverId: number, receiverData: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/receivers/${receiverId}`, receiverData);
   }
 }
