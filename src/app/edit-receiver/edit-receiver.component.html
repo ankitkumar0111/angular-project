@@ -2,9 +2,12 @@
     <p class="p-1">Edit Receiver</p>
     <form [formGroup]="receiverForm" (ngSubmit)="onSubmit()">
      
-        <select formControlName="country" id="country" (change)="onCountryChange()">
-          <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
-        </select>
+      <!-- <select formControlName="country" id="country" (change)="onCountryChange()">
+        <option *ngFor="let country of countries" [value]="country.name" class="country-option">
+          <img [src]="country.flagImageUrl" alt="{{ country.name }}"/> {{ country.name }}
+        </option>
+      </select> -->
+      <input formControlName="country" id="country" placeholder="Country" value="" disabled>
       
         <h2>Receivers's Personal Information</h2>
 

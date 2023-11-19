@@ -37,15 +37,17 @@ export class EditReceiverComponent implements OnInit {
 
   initForm() {
     this.receiverForm = this.fb.group({
-      country: [this.receiverData.country, Validators.required],
+      country: [{ value: this.receiverData.country, disabled: true }], // Display-only field
+      // Other form controls - adjust as per your requirements
       type: [this.receiverData.type],
       countryCode: [this.receiverData.countryCode],
       phoneNumber: [this.receiverData.phoneNumber],
-      firstName: [this.receiverData.firstName,  Validators.required],
-      middleName: [this.receiverData.middleName,  Validators.required],
-      lastName: [this.receiverData.lastName,  Validators.required]
+      firstName: [this.receiverData.firstName, Validators.required],
+      middleName: [this.receiverData.middleName],
+      lastName: [this.receiverData.lastName, Validators.required]
     });
   }
+
 
   onSubmit() {
     const updatedReceiverData = this.receiverForm.value;
@@ -60,22 +62,22 @@ export class EditReceiverComponent implements OnInit {
 
   // ... (previous code)
 
-onCountryChange() {
-  const selectedCountry = this.receiverForm.get('country').value;
-  const countryDetails = this.countries.find(country => country.name === selectedCountry);
+// onCountryChange() {
+//   const selectedCountry = this.receiverForm.get('country').value;
+//   const countryDetails = this.countries.find(country => country.name === selectedCountry);
 
-  const controlsToEnable = countryDetails.fields;
-  controlsToEnable.forEach(control => {
-    this.receiverForm.get(control).enable();
-  });
+//   const controlsToEnable = countryDetails.fields;
+//   controlsToEnable.forEach(control => {
+//     this.receiverForm.get(control).enable();
+//   });
 
-  const controlsToDisable = ['type', 'countryCode', 'phoneNumber', 'firstName', 'middleName', 'lastName'];
-  controlsToDisable.forEach(control => {
-    if (!controlsToEnable.includes(control)) {
-      this.receiverForm.get(control).disable();
-    }
-  });
-}
+//   const controlsToDisable = ['type', 'countryCode', 'phoneNumber', 'firstName', 'middleName', 'lastName'];
+//   controlsToDisable.forEach(control => {
+//     if (!controlsToEnable.includes(control)) {
+//       this.receiverForm.get(control).disable();
+//     }
+//   });
+// }
 
 // ... (remaining code)
 
