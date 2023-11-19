@@ -6,3 +6,40 @@
 body{
     background-color:  #EBECE7;
 }
+
+/* "countries": [
+    {
+      "id": 1,
+      "name": "USA",
+      "fields": [
+        "type",
+        "countryCode",
+        "phoneNumber",
+        "firstName",
+        "lastName"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "India",
+      "fields": [
+        "type",
+        "countryCode",
+        "phoneNumber",
+        "firstName",
+        "middleName",
+        "lastName"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Other Country",
+      "fields": [
+        "type",
+        "countryCode",
+        "phoneNumber",
+        "firstName",
+        "lastName"
+      ]
+    }
+  ], */

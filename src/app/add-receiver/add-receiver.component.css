@@ -30,6 +30,10 @@
     padding: 15px;
 }
 
+.country-option{
+   font-size: 15px;
+}
+
 .contact{
     width: 98%;
     margin-top: 50px;
@@ -52,14 +56,28 @@ padding: 15px;
     margin-top: 50px;
 }
 
+.firstName{
+    width: 45%;
+}
+
+.lastName{
+    width: 45%; 
+}
+
+
 .names-1 input{
-    width: 47%;
+    width: 100%;
     padding: 15px;
 }
 
-#middleName{
+.middleName{
     margin-top: 50px;
-    width: 46%;
+    width: 44%;
+  
+}
+
+.middleName input{
+    width: 100%;
     padding: 15px;
 }
 
@@ -84,3 +102,101 @@ padding: 15px;
     font-size: 18px;
    border: none;
 }
+
+.validations{
+    text-align: start;
+    color: red;
+}
+/* {
+  "countries": [
+    {
+      "id": 1,
+      "name": "USA",
+      "countryCode": "+1",
+      "fields": [
+        "type",
+        "phoneNumber",
+        "firstName",
+        "lastName"
+      ],
+      "flagImageUrl": "https://example.com/usa_flag.png"
+    },
+    {
+      "id": 2,
+      "name": "India",
+      "countryCode": "+91",
+      "fields": [
+        "type",
+        "phoneNumber",
+        "firstName",
+        "middleName",
+        "lastName"
+      ],
+      "flagImageUrl": "https://example.com/india_flag.png"
+    },
+    {
+      "id": 3,
+      "name": "Philippines",
+      "countryCode": "+XX",
+      "fields": [
+        "type",
+        "phoneNumber",
+        "firstName",
+        "lastName"
+      ],
+      "flagImageUrl": "https://example.com/philippines_flag.png"
+    },
+    {
+      "id": 4,
+      "name": "United Kingdom",
+      "countryCode": "+44",
+      "fields": [
+        "type",
+        "phoneNumber",
+        "firstName",
+        "lastName"
+      ],
+      "flagImageUrl": "https://example.com/uk_flag.png"
+    },
+    {
+      "id": 5,
+      "name": "Canada",
+      "countryCode": "+1",
+      "fields": [
+        "type",
+        "phoneNumber",
+        "firstName",
+        "middleName",
+        "lastName"
+      ],
+      "flagImageUrl": "https://example.com/canada_flag.png"
+    },
+    {
+      "id": 6,
+      "name": "Australia",
+      "countryCode": "+61",
+      "fields": [
+        "type",
+        "phoneNumber",
+        "firstName",
+        "lastName"
+      ],
+      "flagImageUrl": "https://example.com/australia_flag.png"
+    },
+    {
+      "id": 7,
+      "name": "Japan",
+      "countryCode": "+81",
+      "fields": [
+        "type",
+        "phoneNumber",
+        "firstName",
+        "middleName",
+        "lastName"
+      ],
+      "flagImageUrl": "https://example.com/japan_flag.png"
+    },
+
+  ]
+} */
+

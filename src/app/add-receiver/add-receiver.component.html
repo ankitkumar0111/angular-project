@@ -6,24 +6,46 @@
 
   <!-- <label for="country">Select Country</label> -->
   
-  <select formControlName="country" id="country" (change)="onCountryChange()">
+  <!-- <select formControlName="country" id="country" (change)="onCountryChange()">
     
     <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+  </select> -->
+
+  <select formControlName="country" id="country" (change)="onCountryChange()">
+    <option value="" disabled selected>Select Country</option>
+    <option *ngFor="let country of countries" [value]="country.name" class="country-option">
+      <img [src]="country.flagImageUrl" alt="{{ country.name }} " width="20" height="20"/> {{ country.name }}
+    </option>
   </select>
 
   <h2>Receivers's Personal Information</h2>
 
 <div class="names-1">
   <!-- <label for="firstName">First Name</label> -->
+  <div class="firstName">
   <input formControlName="firstName" id="firstName" placeholder="Receiver's first name"  *ngIf="receiverForm.get('firstName').enabled">
+  <div class="validations" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+    <div *ngIf="firstName?.errors?.required">First Name required.</div>
+  </div>
+</div>
 
    <!-- <label for="lastName" *ngIf="receiverForm.get('lastName').enabled">Last Name</label> -->
+   <div class="lastName">
    <input formControlName="lastName" id="lastName" placeholder="Receiver's last name"  *ngIf="receiverForm.get('lastName').enabled">
+   <div class="validations" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+    <div *ngIf="lastName.errors?.required">Last Name required.</div>
+  </div>
+   </div>
 
   </div>
 
   <!-- <label for="middleName" *ngIf="receiverForm.get('middleName').enabled">Middle Name</label> -->
-  <input formControlName="middleName" id="middleName" placeholder="Receiver's middle name(optional)"  *ngIf="receiverForm.get('middleName').enabled">
+  <div class="middleName" *ngIf="receiverForm.get('middleName').enabled">
+  <input formControlName="middleName" id="middleName" placeholder="Receiver's middle name(optional)"  >
+  <div class="validations" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" >
+    <div *ngIf="lastName.errors?.required">Middle Name required.</div>
+  </div>
+</div>
 
  
 
@@ -31,17 +53,24 @@
  <div class="contact">
   <!-- <label for="type">Type</label> -->
   <select formControlName="type" id="type">
+    <option value="" disabled selected>Type</option>
     <option value="mobile">Mobile</option>
     <option value="phone">Phone</option>
   </select>
 
   <!-- <label for="countryCode">Country Code</label> -->
   <select formControlName="countryCode" id="countryCode">
-    
+    <option value="" disabled selected>Country Code</option>
     <option value="+91">+91</option>
     <option value="+12">+12</option>
     <option value="+22">+22</option>
+    <option value="+91">+1</option>
+    <option value="+12">+44</option>
+    <option value="+22">+22</option>
+    <option value="+91">+91</option>
   </select>
+
+  
 
   
   <!-- <label for="phoneNumber">Phone Number</label> -->

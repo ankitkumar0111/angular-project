@@ -59,3 +59,7 @@ li p{
     border-bottom: none;
     border-right: none;
 }
+
+i{
+    padding: 24px;
+}

@@ -18,16 +18,21 @@ export class AddReceiverComponent implements OnInit {
   ngOnInit() {
     this.receiverForm = this.fb.group({
       country: ['', Validators.required],
-      type: [''], 
-      countryCode: [''], 
-      phoneNumber: [''], 
-      firstName: [''],
-      middleName: [''],
-      lastName: ['']
+      flagImageUrl: [''],
+      type: ['',Validators.required], 
+      countryCode: ['',Validators.required], 
+      phoneNumber: ['',Validators.required], 
+      firstName: ['',Validators.required],
+      middleName: ['',Validators.required],
+      lastName: ['',Validators.required]
     });
+
+   
 
     this.receiverService.getCountries().subscribe(countries => {
       this.countries = countries;
+      console.log(countries);
+      
     });
 
     this.receiverForm.get('type').disable();
@@ -38,13 +43,29 @@ export class AddReceiverComponent implements OnInit {
     this.receiverForm.get('lastName').disable();
   }
 
+  get firstName() {
+    return this.receiverForm.get('firstName');
+  }
 
+  get middleName() {
+    return this.receiverForm.get('middleName');
+  }
+
+
+  get lastName() {
+    return this.receiverForm.get('lastName');
+  }
+
+ 
   onSubmit() {
+    if (this.receiverForm.invalid) {
+      return;
+    }
     const receiverData = this.receiverForm.value;
     this.receiverService.postReceiver(receiverData).subscribe(response => {
-      
+      this.router.navigate(["/myreceiver"])  
     });
-    this.router.navigate(["/myreceiver"])
+    
   }
 
 
