@@ -18,9 +18,9 @@ export class AddReceiverComponent implements OnInit {
   ngOnInit() {
     this.receiverForm = this.fb.group({
       country: ['', Validators.required],
-      type: [''], // Dropdown for type
-      countryCode: [''], // Dropdown for countryCode
-      phoneNumber: [''], // Add phoneNumber control
+      type: [''], 
+      countryCode: [''], 
+      phoneNumber: [''], 
       firstName: [''],
       middleName: [''],
       lastName: ['']

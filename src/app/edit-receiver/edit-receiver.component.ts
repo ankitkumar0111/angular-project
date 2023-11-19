@@ -21,7 +21,7 @@ export class EditReceiverComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.receiverId = +params['id']; // Extracting the receiver id from the route parameter
+      this.receiverId = +params['id']; 
     });
 
     this.receiverService.getCountries().subscribe(countries => {
@@ -58,7 +58,7 @@ export class EditReceiverComponent implements OnInit {
     this.router.navigate(["/myreceiver"]);
   }
 
-  // ... (previous code)
+
 
 onCountryChange() {
   const selectedCountry = this.receiverForm.get('country').value;
@@ -76,7 +76,5 @@ onCountryChange() {
     }
   });
 }
-
-// ... (remaining code)
 
 }
