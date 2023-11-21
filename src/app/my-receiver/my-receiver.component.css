@@ -7,14 +7,13 @@
     margin: auto;
 }
 
-p{
+.receiver{
     /* text-align: start; */
-    color: #3e3b3b;
     font-size: 30px;
     width: 60%;
     text-align: left;
-    font-weight: bold;
     margin-bottom: -5px;
+    font-weight: lighter;
     /* margin-left: -26.6rem; */
 }
 
@@ -24,6 +23,7 @@ ul{
 }
 
 li{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     height: 50px;
@@ -32,10 +32,11 @@ li{
 }
 
 li p{
-    margin-left: 50px;
+    width: 60%;
+    margin-left: 0px;
     margin-top: 10px;
-    font-size: 26px;
-    color: #837c7c;
+    font-size: 17px;
+    color: #767676;
 }
 
 .buttons{

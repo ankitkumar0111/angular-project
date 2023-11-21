@@ -1,8 +1,8 @@
 <div class="container">
-  <p>Receivers</p>
+  <p class="receiver">Receivers</p>
   <ul>
     <li *ngFor="let receiver of receivers">
-      <i class="fa-solid fa-user fa-xl"></i>
+      <i class="fa-regular fa-user fa-xl" style="color: #afb1b6;"></i>
       <p>{{ receiver.firstName }} {{receiver.middleName}} {{ receiver.lastName }}</p> 
       <div class="buttons">
         <i class="fa-regular fa-pen-to-square" style="color: #679bf4;" (click)="editReceiver(receiver.id)"></i>
