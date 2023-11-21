@@ -4,12 +4,7 @@
   <p class="p-2">For your safety, make sure you know your receiver</p>
 <form [formGroup]="receiverForm" (ngSubmit)="onSubmit()">
 
-  <!-- <label for="country">Select Country</label> -->
-  
-  <!-- <select formControlName="country" id="country" (change)="onCountryChange()">
-    
-    <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
-  </select> -->
+
 
   <select formControlName="country" id="country" (change)="onCountryChange()">
     <option value="" disabled selected>Select Country</option>
@@ -21,7 +16,6 @@
   <h2>Receivers's Personal Information</h2>
 
 <div class="names-1">
-  <!-- <label for="firstName">First Name</label> -->
   <div class="firstName">
   <input formControlName="firstName" id="firstName" placeholder="Receiver's first name"  *ngIf="receiverForm.get('firstName').enabled">
   <div class="validations" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
@@ -29,7 +23,6 @@
   </div>
 </div>
 
-   <!-- <label for="lastName" *ngIf="receiverForm.get('lastName').enabled">Last Name</label> -->
    <div class="lastName">
    <input formControlName="lastName" id="lastName" placeholder="Receiver's last name"  *ngIf="receiverForm.get('lastName').enabled">
    <div class="validations" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
