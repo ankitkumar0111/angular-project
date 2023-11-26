@@ -5,14 +5,30 @@
     height: 84vh;
     padding: 1px 15px;
 }
+input,select{
+  
+    font-size: 20px;
+    color: #232323;
+    box-shadow: none;
+    border: 1px solid #D3D3D3;
+    font-weight: 400;
+    border-radius: 3px;
+  }
 
-.p-1{
-    color: #3e3b3b;
-    font-weight: 500;
-    font-size: 30px;
-    /* padding-top: 19px;
-    padding-left: 7px; */
-}
+  option{
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px;
+    color: #050505;
+  }
+
+  .p-1{
+    color: #232323;
+    margin-top: 25px;
+      font-size: 30px;
+      /* padding-top: 19px;
+      padding-left: 7px; */
+  }
 
 /* .p-2{
     color: #837c7c;
@@ -32,47 +48,48 @@
 
 .contact{
     width: 98%;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 #type,#countryCode{
 width: 24%;
-padding: 15px;
+padding: 20px;
 }
 
 #phoneNumber{
     width: 52%;
-    padding: 15px;
+    padding: 20px;
 }
 
 .names-1{
     display: flex;
     justify-content: space-between;
     width: 98%;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .names-1 input{
     width: 47%;
-    padding: 15px;
+    padding: 20px;
 }
 
 #middleName{
     margin-top: 50px;
     width: 46%;
-    padding: 15px;
+    padding: 20px;
 }
 
 .submit{
     color: white;
     width: 98%;
-    padding: 10px;
-    margin-top: 50px;
+    padding: 12px;
+    margin-top: 70px;
     background-color: #368abb;
     border-color: #368abb;
-    font-size: 18px;
+    font-size: 23px;
     border-right: none;
     border-bottom: none;
+    border-radius: 3px;
 }
 
 .cancel{
@@ -81,6 +98,7 @@ padding: 15px;
     padding: 10px;
     margin-top: 5px;
     color: #368abb;
-    font-size: 18px;
+    font-size: 23px;
    border: none;
+   border-radius: 3px;
 }

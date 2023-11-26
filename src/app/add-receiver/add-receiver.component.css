@@ -6,17 +6,51 @@
     padding: 1px 15px;
 }
 
+h2{
+  margin-top: 43px;
+  font-size: 20px;
+    font-weight: 700;
+}
+
+input,select{
+  
+  font-size: 20px;
+  color: #7E7E7E;
+  box-shadow: none;
+  border: 1px solid #D3D3D3;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+/* select{
+  border: 1px solid #D3D3D3;
+  color: #7E7E7E;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 3px;
+} */
+
+option{
+  font-size: 20px;
+  padding: 10px;
+  margin: 20px;
+  color: #050505;
+}
+
+
+
 .p-1{
-    color: #3e3b3b;
-    font-weight: 500;
+  color: #232323;
+  margin-top: 15px;
     font-size: 30px;
     /* padding-top: 19px;
     padding-left: 7px; */
 }
 
 .p-2{
-    color: #837c7c;
-    font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+  color: #232323;
     font-size: 20px;
     /* padding-left: 7px; */
 }
@@ -30,9 +64,9 @@
     padding: 15px;
 }
 
-.country-option{
+/* .country-option{
    font-size: 15px;
-}
+} */
 
 .contact{
     width: 98%;
@@ -46,28 +80,29 @@ padding: 15px;
 
 #phoneNumber{
     width: 52%;
-    padding: 15px;
+    padding: 13px;
 }
 
 .names-1{
     display: flex;
     justify-content: space-between;
     width: 98%;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .firstName{
-    width: 45%;
+    width: 47%;
 }
 
 .lastName{
-    width: 45%; 
+    width: 47%; 
 }
 
 
 .names-1 input{
     width: 100%;
     padding: 15px;
+    
 }
 
 .middleName{
@@ -88,9 +123,10 @@ padding: 15px;
     margin-top: 50px;
     background-color: #368abb;
     border-color: #368abb;
-    font-size: 18px;
+    font-size: 23px;
     border-right: none;
     border-bottom: none;
+    border-radius: 3px;
 }
 
 .cancel{
@@ -99,13 +135,16 @@ padding: 15px;
     padding: 10px;
     margin-top: 5px;
     color: #368abb;
-    font-size: 18px;
+    font-size: 23px;
    border: none;
+   border-radius: 3px;
 }
 
 .validations{
+  font-size: 20px;
+  font-weight: 500;
     text-align: start;
-    color: red;
+    color: #255E80;
 }
 /* {
   "countries": [

@@ -1,6 +1,6 @@
 header {
     background-color: #212A33;
-    height: 68px;
+    height: 75px;
     display: flex;
     justify-content: space-between;
   }
@@ -21,10 +21,11 @@ header {
   .wu-header-content{
       display: flex;
       align-items: center;
+      margin-top: 8px;
   }
   .wu-header-content>li{
-      padding-left: 15px;
-      padding-right: 15px;
+      padding-left: 25px;
+      padding-right: 20px;
       height: 100%;
       display: flex;
       align-items: center;
@@ -33,7 +34,7 @@ header {
   .wu-header-content>li,.wu-header-content>li>a {
     color: #fff;
     font-size: 20px;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-decoration: none;
   }
   /* .wu-header-content>li:nth-child(5){
@@ -43,8 +44,35 @@ header {
   } */
 
   .login{
-    border: 2px solid yellow;
+    /* border: 2px solid #EFE2B5; */
     border-radius: 8px;
-    color: yellow !important;
-    padding: 10px;
+    font-size: 18px;
+    color: #EFE2B5 !important;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-left: 20px;
+  }
+
+  .login2{
+      border: 2px solid #EFE2B5;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 18px;
+      color: #EFE2B5 !important;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      margin-left: 20px;
+  }
+
+  p{
+    font-size: 20px;
+    color:  #EFE2B5;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    font-weight: 500;
+  }
+
+  .user{
+    margin-left: 40px;
+    margin-right: 30px;
   }

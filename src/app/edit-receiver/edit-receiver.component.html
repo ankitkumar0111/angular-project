@@ -1,5 +1,5 @@
 <div class="container">
-    <p class="p-1">Edit Receiver</p>
+    <p class="p-1">{{receiverData.firstName}} {{receiverData.middleName}} {{receiverData.lastName}}</p>
     <form [formGroup]="receiverForm" (ngSubmit)="onSubmit()" *ngIf="receiverForm" >
      
       <!-- <select formControlName="country" id="country" (change)="onCountryChange()">
@@ -9,7 +9,7 @@
       </select> -->
       <input formControlName="country" id="country"  disabled>
       
-        <h2>Receivers's Personal Information</h2>
+        <!-- <h2>Receivers's Personal Information</h2> -->
 
         <div class="names-1">
             <!-- <label for="firstName">First Name</label> -->
