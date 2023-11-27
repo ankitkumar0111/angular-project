@@ -35,4 +35,19 @@ export class MyReceiverComponent implements OnInit {
     });
   }
 
+  // Inside your Angular component
+// activeAccordion: number | null = null; // Initialize as null or any default value
+
+// // Function to toggle the active accordion
+// toggleAccordion(receiverId: number): void {
+//   if (this.activeAccordion === receiverId) {
+//     // If the clicked receiver's accordion is already active, close it
+//     this.activeAccordion = null;
+//   } else {
+//     // If another receiver's accordion is active, close it before opening the clicked one
+//     this.activeAccordion = receiverId;
+//   }
+// }
+
+
 }

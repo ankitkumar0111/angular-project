@@ -1,15 +1,43 @@
-<div class="container">
+<!-- <div class="container">
   <p class="receiver">Receivers</p>
   <ul>
     <li *ngFor="let receiver of receivers">
       <i class="fa-regular fa-user fa-xl" style="color: #afb1b6;"></i>
       <p>{{ receiver.firstName }} {{receiver.middleName}} {{ receiver.lastName }}</p> 
-      <div class="buttons">
-        <i class="fa-regular fa-pen-to-square" style="color: #679bf4;" (click)="editReceiver(receiver.id)"></i>
-        <i class="fa-solid fa-trash"  style="color: #679bf4;" (click)="deleteReceiver(receiver.id)"></i>
+      <div class="accordion" [attr.id]="'accordionExample_' + receiver.id">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" [attr.data-bs-toggle]="'collapse'" [attr.data-bs-target]="'#collapseOne_' + receiver.id" aria-expanded="true" [attr.aria-controls]="'collapseOne_' + receiver.id" (click)="toggleAccordion(receiver.id)">
+              <i class="fa-regular fa-pen-to-square" style="color: #679bf4;"></i>
+            </button>
+          </h2>
+          <div [id]="'collapseOne_' + receiver.id" class="accordion-collapse collapse" [ngClass]="{ 'show': activeAccordion === receiver.id }" [attr.aria-labelledby]="'headingOne_' + receiver.id" [attr.data-bs-parent]="'#accordionExample_' + receiver.id">
+            <div class="accordion-body">
+              
+              <i class="fa-regular fa-pen-to-square" style="color: #679bf4;" (click)="editReceiver(receiver.id)"></i>
+              <i class="fa-regular fa-trash" style="color: #679bf4;" (click)="deleteReceiver(receiver.id)"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </li>
   </ul>
-
   <button class="add-button" (click)="navigateToAddReceiver()">Add Receiver</button>
-</div>
+</div> -->
+
+<div class="container">
+    <p class="receiver">Receivers</p>
+    <ul>
+      <li *ngFor="let receiver of receivers">
+        <i class="fa-regular fa-user fa-xl" style="color: #afb1b6;"></i>
+        <p>{{ receiver.firstName }} {{receiver.middleName}} {{ receiver.lastName }}</p> 
+        <div class="buttons">
+          <i class="fa-regular fa-pen-to-square" style="color: #679bf4;" (click)="editReceiver(receiver.id)"></i>
+          <i class="fa-solid fa-trash"  style="color: #679bf4;" (click)="deleteReceiver(receiver.id)"></i>
+        </div>
+      </li>
+    </ul>
+  
+    <button class="add-button" (click)="navigateToAddReceiver()">Add Receiver</button>
+  </div>
+

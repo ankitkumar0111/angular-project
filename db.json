@@ -100,15 +100,6 @@
       "id": 3
     },
     {
-      "country": "USA",
-      "type": "mobile",
-      "countryCode": "+91",
-      "phoneNumber": "7579312081",
-      "firstName": "John",
-      "lastName": "Smith",
-      "id": 4
-    },
-    {
       "country": "India",
       "type": "mobile",
       "countryCode": "+91",
