@@ -35,8 +35,8 @@
   <!-- <label for="middleName" *ngIf="receiverForm.get('middleName').enabled">Middle Name</label> -->
   <div class="middleName" *ngIf="receiverForm.get('middleName').enabled">
   <input formControlName="middleName" id="middleName" placeholder="Receiver's middle name(optional)"  >
-  <div class="validations" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" >
-    <div *ngIf="lastName.errors?.required">Middle Name required.</div>
+  <div class="validations" *ngIf="middleName.invalid && (middleName.dirty || middleName.touched)" >
+    <div *ngIf="middleName.errors?.required">Middle Name required.</div>
   </div>
 </div>
 

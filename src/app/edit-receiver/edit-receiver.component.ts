@@ -39,8 +39,8 @@ export class EditReceiverComponent implements OnInit {
 
   initForm() {
     this.receiverForm = this.fb.group({
-      country: [this.receiverData.country], // Display-only field
-      // Other form controls - adjust as per your requirements
+      country: [this.receiverData.country],
+     
       type: [this.receiverData.type],
       countryCode: [this.receiverData.countryCode],
       phoneNumber: [this.receiverData.phoneNumber],

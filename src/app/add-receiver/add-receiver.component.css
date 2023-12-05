@@ -1,14 +1,15 @@
 .container{
+  margin: auto;
     background-color: white;
     margin-top: 33px;
-    width: 100%;
+    width: 70%;
     height: 84vh;
     padding: 1px 15px;
 }
 
 h2{
   margin-top: 43px;
-  font-size: 20px;
+  font-size: 24px;
     font-weight: 700;
 }
 
@@ -50,6 +51,7 @@ option{
 .p-2{
   font-size: 14px;
   margin: 0;
+  margin-bottom: 10px;
   color: #232323;
     font-size: 20px;
     /* padding-left: 7px; */
@@ -107,7 +109,7 @@ padding: 15px;
 
 .middleName{
     margin-top: 50px;
-    width: 44%;
+    width: 46%;
   
 }
 

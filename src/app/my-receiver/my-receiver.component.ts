@@ -34,6 +34,7 @@ export class MyReceiverComponent implements OnInit {
       console.log(`Receiver with ID ${receiverId} deleted successfully.`);
     });
   }
+  
 
   // Inside your Angular component
 // activeAccordion: number | null = null; // Initialize as null or any default value

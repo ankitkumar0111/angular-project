@@ -6,6 +6,7 @@ import { MyReceiverComponent } from './my-receiver/my-receiver.component';
 import { AuthGuard } from './auth.guard';
 import { EditReceiverComponent } from './edit-receiver/edit-receiver.component';
 import { AddReceiverComponent } from './add-receiver/add-receiver.component';
+import { SendMoneyComponent } from './send-money/send-money.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
     path:'login',
     component:LoginComponent
   },
+{
+  path: 'send',
+  component: SendMoneyComponent
+},
   {
     path:'myreceiver',
     component: MyReceiverComponent,
@@ -35,7 +40,7 @@ const routes: Routes = [
     component: AddReceiverComponent,
     canActivate: [AuthGuard],
   },
-  // ... other routes
+
   { 
     path: 'edit-receiver/:id',
    component: EditReceiverComponent,

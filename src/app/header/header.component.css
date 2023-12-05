@@ -50,7 +50,8 @@ header {
     color: #EFE2B5 !important;
     margin-bottom: 5px;
     margin-top: 0px;
-    margin-left: 20px;
+    margin-left: 35px;
+    text-decoration: none;
   }
 
   .login2{
@@ -62,6 +63,7 @@ header {
       margin-bottom: 5px;
       margin-top: 5px;
       margin-left: 20px;
+      
   }
 
   p{

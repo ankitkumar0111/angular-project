@@ -8,34 +8,34 @@
 }
 
 .receiver{
-    /* text-align: start; */
+   
     font-size: 30px;
-    width: 60%;
+    width: 55%;
     text-align: left;
     margin-bottom: -5px;
     font-weight: lighter;
-    /* margin-left: -26.6rem; */
+    
 }
 
 ul{
-    width: 60%;
+    width: 55%;
     padding: 0;
 }
 
 li{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    
     height: 50px;
     background-color: white;
     margin-top: 26px;
 }
 
 li p{
-    width: 60%;
+    width: 75%;
     margin-left: 0px;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 25px;
     color: #767676;
 }
 
@@ -50,15 +50,16 @@ li p{
 .add-button{
     background-color: #368abb;
     position: relative;
-    width: 60%;
+    width: 55%;
     font-size: 20px;
-    /* left: 21px; */
+  
     color: white;
     border-color: #368abb;
     padding: 14px;
     margin-top: 20px;
     border-bottom: none;
     border-right: none;
+    border-radius: 3px;
 }
 
 i{
