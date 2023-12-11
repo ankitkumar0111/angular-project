@@ -6,19 +6,18 @@
         <div class="country-input-select">
           <div class="country-input">
             <div class="country-input-flag">
-              <img [src]="urlSelected" alt="">
+              <img [src]="flagImageUrl" alt="Flag Image">
             </div>
             <div class="country-input-text">
               <label for="">Send to</label>
-              <input [ngModel]="countrySelected" (ngModelChange)="filter($event)" name="country" type="text">
+              <input [ngModel]="selectedCountry" (ngModelChange)="filter($event)" name="country" type="text">
             </div>
             <i class="bi bi-search"></i>
           </div>
-          <!-- jl -->
           <div class="country-select-container" *ngIf="showCountry">
-            <div class="country-select-container-child" *ngFor="let country of filteredCountry "
+            <div class="country-select-container-child" *ngFor="let country of countries"
               (click)="countryChange(country)">
-              <img [src]="country.url">
+              <img [src]="country.flagImageUrl">
               <p>{{country.name}}</p>
             </div>
           </div>
@@ -28,38 +27,38 @@
         <div class="money-input">
           <div class="money-input-send">
             <label for="">Send amount</label>
-            <input [ngModel]="sendAmount" (ngModelChange)="sendAmountChange($event)" name="sendAmount" type="number">
+            <input [ngModel]="sendMoney" (ngModelChange)="sendMoneyChange($event)" name="sendMoney" type="number">
             <p>{{senderCode}}</p>
           </div>
           <i class="bi bi-arrow-left-right"></i>
           <div class="money-input-receiver">
             <label for="">Receive amount</label>
-            <input [ngModel]="receiveAmount" (ngModelChange)="receiveAmountChange($event)" name="receiveAmount"
+            <input [ngModel]="receiveMoney" (ngModelChange)="receiveMoneyChange($event)" name="receiveMoney"
               type="number">
-            <p>{{receiverCode}}</p>
+            <p>{{currencyCode}}</p>
           </div>
         </div>
       </div>
       <hr>
-      <div class="payout-section">
+      <div class="payout">
         <h6>How does your receiver want the money?</h6>
-        <div class="payout-section-tiles">
-          <div [ngClass]="selectedPayout==='cash'?'selected-tile':'nonselected-tiles'" (click)="payoutMethod('cash')">
-            <span *ngIf="selectedPayout==='cash'?true:false">
+        <div class="payoutCards">
+          <div [ngClass]="selectedPayout==='cash'?'selectedCard':'nonselectedCard'" (click)="payoutMethod('cash')">
+            <span *ngIf="selectedPayout==='cash'">
               <div class="green-tick"><i class="bi bi-check-lg"></i></div>
             </span>
             <div><img src="assets/images/cash-on-delivery.png" class="payout-images" alt=""></div>
             <p>Cash pickup</p>
           </div>
-          <div [ngClass]="selectedPayout==='bank'?'selected-tile':'nonselected-tiles'" (click)="payoutMethod('bank')">
-            <span *ngIf="selectedPayout==='bank'?true:false">
+          <div [ngClass]="selectedPayout==='bank'?'selectedCard':'nonselectedCard'" (click)="payoutMethod('bank')">
+            <span *ngIf="selectedPayout==='bank'">
               <div class="green-tick"><i class="bi bi-check-lg"></i></div>
             </span>
             <div #child><img src="assets/images/bank.png" class="payout-images" alt=""></div>
             <p>Bank Acount</p>
           </div>
-          <div [ngClass]="selectedPayout==='wallet'?'selected-tile':'nonselected-tiles'" (click)="payoutMethod('wallet')">
-            <span *ngIf="selectedPayout==='wallet'?true:false">
+          <div [ngClass]="selectedPayout==='wallet'?'selectedCard':'nonselectedCard'" (click)="payoutMethod('wallet')">
+            <span *ngIf="selectedPayout==='wallet'">
               <div class="green-tick"><i class="bi bi-check-lg"></i></div>
             </span>
             <div><img src="assets/images/wallet.png" class="payout-images" alt=""></div>
@@ -67,10 +66,10 @@
           </div>
         </div>
         <p>
-          Your receiver can pick up money from any of our 37,000 agent locations across {{countrySelected}}.</p>
+          Your receiver can pick up money from any of our 37,000 agent locations across {{selectedCountry}}.</p>
       </div>
       <hr>
-      <div class="payin-section">
+      <div class="payin">
    
         <h6>How would you like to pay?</h6>
         <div>
@@ -85,3 +84,6 @@
       <button (click)="onContinue()">Continue</button>
     </form>
   </div>
+
+  
+  

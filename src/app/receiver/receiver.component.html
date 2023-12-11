@@ -1,0 +1,123 @@
+<div class="receiver">
+  <div class="receiver-text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+    delectus, iusto quaerat quae, dolore in inventore unde quia eligendi veniam
+    suscipit ipsam maiores cumque dolorem voluptates, odit quos exercitationem
+    aliquid.
+  </div>
+  <div class="receiver-form">
+    <form [formGroup]="receiverForm" (ngSubmit)="onSubmit()">
+      <div class="receiver-name">
+        <div class="receiver-first-name">
+      <label for="firstName">First Name</label>
+      <input id="firstName" formControlName="firstName" type="text" required />
+    </div>
+
+    <div class="receiver-middle-name">
+      <label for="middleName">Middle Name</label>
+      <input id="middleName" formControlName="middleName" type="text" />
+    </div>
+  </div>
+
+  <div class="receiver-last-name">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" formControlName="lastName" type="text" required />
+    </div>
+
+    <div class="email">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email" required />
+    </div>
+
+      <div class="wallet-information">
+        <div class="wallet-code">
+        <label for="walletCountryCode">Country Code</label>
+        <select formControlName="countryCode" id="walletCountryCode">
+          <option value="" disabled selected>Country Code</option>
+          <option value="+91">+91</option>
+          <option value="+12">+12</option>
+          <option value="+22">+22</option>
+          <option value="+91">+1</option>
+          <option value="+12">+44</option>
+          <option value="+22">+22</option>
+          <option value="+91">+91</option>
+        </select>
+      </div>
+
+      <div class="wallet-number">
+        <label for="phoneNumber">Mobile Number</label>
+        <input id="phoneNumber" formControlName="phoneNumber" type="text" />
+      </div>
+    </div>
+
+      <!-- <div class="phone-number">
+        <label for="phoneNumber">Phone Number(Optional)</label>
+        <input id="phoneNumber" type="text" formControlName="phoneNumber">
+      </div> -->
+    
+
+      <!-- Bank related fields -->
+      <div class="bank" *ngIf="selectedPayout === 'bank'">
+        <h6>Receiver's Bank Account Information</h6>
+        <div class="bank-details">
+          <div class="bank-name">
+        <label for="bankName">Bank Name</label>
+        <input id="bankName" formControlName="bankName" type="text" />
+      </div>
+
+      <div class="account-number">
+        <label for="accountNumber">Account Number</label>
+        <input id="accountNumber" formControlName="accountNumber" type="text" />
+      </div>
+
+      <div class="reenter-account">
+        <label for="reEnterAccount">Re-enter Account Number</label>
+        <input
+          id="reEnterAccount"
+          formControlName="reEnterAccount"
+          type="text"
+        />
+      </div>
+      </div>
+      </div>
+
+      <!-- Wallet related fields -->
+      <div class="wallet" *ngIf="selectedPayout === 'wallet'">
+        <h6>Receiver's Wallet Information</h6>
+        <div class="wallet-details">
+          <div class="wallet-provider">
+        <label for="walletProvider">Wallet Provider</label>
+        <input
+          id="walletProvider"
+          formControlName="walletProvider"
+          type="text"
+        />
+      </div>
+
+      <div class="wallet-information">
+        <div class="wallet-code">
+        <label for="walletCountryCode">Country Code</label>
+        <select formControlName="walletCountryCode" id="walletCountryCode">
+          <option value="" disabled selected>Country Code</option>
+          <option value="+91">+91</option>
+          <option value="+12">+12</option>
+          <option value="+22">+22</option>
+          <option value="+91">+1</option>
+          <option value="+12">+44</option>
+          <option value="+22">+22</option>
+          <option value="+91">+91</option>
+        </select>
+      </div>
+
+      <div class="wallet-number">
+        <label for="mobileNumber">Mobile Number</label>
+        <input id="mobileNumber" formControlName="mobileNumber" type="text" />
+      </div>
+      </div>
+      </div>
+    </div>
+
+      <button type="submit">Continue to review page</button>
+    </form>
+  </div>
+</div>

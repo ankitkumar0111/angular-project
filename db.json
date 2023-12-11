@@ -2,7 +2,9 @@
   "countries": [
     {
       "id": 1,
-      "name": "USA",
+      "name": "Russia",
+      "currencyRate": "90",
+      "currencyCode": "RU",
       "fields": [
         "type",
         "countryCode",
@@ -15,6 +17,8 @@
     {
       "id": 2,
       "name": "India",
+      "currencyRate": "80",
+      "currencyCode": "INR",
       "fields": [
         "type",
         "countryCode",
@@ -128,6 +132,43 @@
       "firstName": "Jackie",
       "lastName": "Chan",
       "id": 7
+    }
+  ],
+  "receiverDetails": [
+    {
+      "country": "USA",
+      "method": "bank",
+      "sendAmount": 100,
+      "receiveAmount": 8333.48,
+      "firstName": "Ankit",
+      "middleName": "Singh",
+      "lastName": "Singh",
+      "email": "ankit324kumar@gmail.com",
+      "countryCode": "+12",
+      "bankName": "Union",
+      "accountNumber": "1234567890",
+      "reEnterAccount": "1234567890",
+      "walletProvider": "",
+      "walletCountryCode": "",
+      "mobileNumber": "",
+      "id": 1
+    },
+    {
+      "country": "USA",
+      "method": "bank",
+      "sendAmount": 100,
+      "receiveAmount": 8333.48,
+      "bankName": "Union",
+      "accountNumber": "1234567890",
+      "reEnterAccount": "1234567890",
+      "id": 2
+    },
+    {
+      "country": "Russia",
+      "method": "cash",
+      "sendMoney": 100,
+      "receiveMoney": 9000,
+      "id": 3
     }
   ]
 }

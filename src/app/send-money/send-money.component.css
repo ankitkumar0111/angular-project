@@ -195,22 +195,22 @@ h6 {
     text-align: end;
   }
    
-  .payout-section,
-  .payin-section {
+  .payout,
+  .payin{
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 20px 0;
   }
    
-  .payout-section-tiles {
+  .payoutCards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
    
   /* .payout-section-tiles>div, */
-  .payin-section>div , .selected-tile{
+  .payin>div , .selectedCard{
     width: 160px;
     height: 130px;
     background-color: #045F86;
@@ -229,11 +229,11 @@ h6 {
     cursor: pointer;
    
   }
-  .selected-tile>span{
+  .selectedCard>span{
     position: relative;
   }
    
-  .nonselected-tiles {
+  .nonselectedCard {
     width: 160px;
     height: 130px;
     /* border: ;
@@ -254,7 +254,7 @@ h6 {
     font-family:sans-serif;
   }
    
-  .nonselected-tiles:hover{
+  .nonselectedCard:hover{
     width: 160px;
     height: 130px;
     background-color: #045F86;
@@ -272,20 +272,20 @@ h6 {
     font-family:sans-serif;
     cursor: pointer;
   }
-  .payin-section>div>p {
+  .payin>div>p {
       color: #fff;
   }
-  .payin-section>div>div>img, .selected-tile .payout-images{
+  .payin>div>div>img, .selectedCard .payout-images{
       color: #fff;
       -webkit-filter: invert(100%); /* Safari/Chrome */
       filter: invert(100%);
   }
-  .nonselected-tiles:hover div{
+  .nonselectedCard:hover div{
     border: 1px solid #fff;
     /* background-color: pink; */
   }
    
-  .nonselected-tiles div {
+  .nonselectedCard div {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -295,7 +295,7 @@ h6 {
     align-items: center;
   }
    
-  .payout-section-tiles>div>p, .payin-section>div>p {
+  .payoutCards>div>p, .payin>div>p {
     width: 100%;
     text-align: center;
     margin-top: 10px;
@@ -314,12 +314,12 @@ h6 {
       width: 30px;
       height: 30px;
   }
-  .nonselected-tiles:hover .payout-images{
+  .nonselectedCard:hover .payout-images{
     color: #fff;
     -webkit-filter: invert(100%); /* Safari/Chrome */
     filter: invert(100%);
   }
-  .payin-section>div>div, .selected-tile>div {
+  .payin>div>div, .selectedCard>div {
       width: 45px;
       height: 45px;
       border-radius: 50%;
@@ -328,7 +328,7 @@ h6 {
       justify-content: center;
       align-items: center;
     }
-    .payin-section>div>span{
+    .payin>div>span{
       position: relative;
     }
     .green-tick{

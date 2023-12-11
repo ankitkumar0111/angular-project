@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ReceiverService } from '../receiver.service';
 
 @Component({
   selector: 'app-send-money',
@@ -9,45 +10,34 @@ import { Router } from '@angular/router';
 export class SendMoneyComponent implements OnInit {
 
   countryData: any;
-  filteredCountry: any;
-  countrySelected: string;
-  urlSelected: string;
+  countries: any;
+  selectedCountry: string;
+  flagImageUrl: string;
   showCountry: boolean = false;
-  forexData: any;
   senderCode: string = "USD";
-  receiverCode: string = "INR";
-  forexSelected: any;
-  forexValue: any = 83.3348;
-  sendAmount: any = 100;
-  receiveAmount: any = this.sendAmount * this.forexValue;
+  currencyCode: string;
+  currencyRate: any= 90;
+  sendMoney: any = 100;
+  receiveMoney: any = this.sendMoney * this.currencyRate;
   selectedPayout: string;
   data: any;
 
-  constructor(private route: Router) { }
- 
-
+  constructor(private route: Router,private receiver: ReceiverService) { }
  
     ngOnInit(): void {
-      // this.receiver.getCountryData().subscribe(
-      //   (res: any) => {
-      //     this.countryData = res;
-      //     this.countrySelected = res[0].name;
-      //     this.urlSelected = res[0].url;
-      //     console.log(this.countryData);
-      //   },
-      //   (err: Error) => {
-      //     console.log(err);
-      //   }
-      // );
-      // this.receiver.getForexData().subscribe(
-      //   (res: any) => {
-      //     this.forexData = res;
-      //     console.log(res);
-      //   },
-      //   (err: Error) => {
-      //     console.log(err);
-      //   }
-      // );
+      this.receiver.getCountries().subscribe(
+        (array: any) => {
+          this.countryData = array;
+          this.selectedCountry = array[0].name;
+          this.flagImageUrl = array[0].flagImageUrl;
+          this.currencyRate = array[0].currencyRate;
+          this.currencyCode = array[0].currencyCode;
+          console.log(this.countryData);
+        },
+        (err: Error) => {
+          console.log(err);
+        }
+      );
     }
     payoutMethod(method: string) {
       this.selectedPayout = method;
@@ -56,59 +46,47 @@ export class SendMoneyComponent implements OnInit {
    
     filter(data: string) {
       this.showCountry = true;
-      this.countrySelected = data;
+      this.selectedCountry = data;
       console.log(data);
-      this.filteredCountry = data === "" ? this.countryData : this.countryData.filter((c: any) => {
+      this.countries = data === "" ? this.countryData : this.countryData.filter((c: any) => {
         return c.name.toLowerCase().includes(data.toLowerCase());
       });
     }
     countryChange(country: any) {
       this.showCountry = false;
-      this.countrySelected = country.name;
-      this.urlSelected = country.url;
-      if (this.countrySelected) {
-   
-        this.forexSelected = this.forexData.filter((c: any) => {
-          return c.receiverCountry.toLowerCase() == this.countrySelected.toLowerCase() && c.senderCountry.toLowerCase() == "usa";
-        });
-        console.log(this.forexSelected);
-        this.forexValue = this.forexSelected[0].forexValue;
-        this.receiverCode = this.forexSelected[0].receiverCode;
-        if (this.sendAmount) {
-          this.receiveAmount = this.sendAmount * this.forexValue;
+      this.selectedCountry = country.name;
+      this.flagImageUrl = country.flagImageUrl;
+      console.log("country",country)
+      if (this.selectedCountry) {
+        this.currencyRate = country.currencyRate
+        this.currencyCode = country.currencyCode;
+        if (this.sendMoney) {
+          this.receiveMoney = this.sendMoney * this.currencyRate;
         }
         else {
-          this.receiveAmount = 0;
+          this.receiveMoney = 0;
         }
-        console.log(this.forexValue);
       }
     }
-    sendAmountChange(amount: any) {
+    sendMoneyChange(amount: any) {
       console.log(amount);
-      this.sendAmount = amount;
-      // this.forexValue = this.forexSelected[0].forexValue;
-      // this.receiverCode = this.forexSelected[0].receiverCode;
-      this.receiveAmount = amount * this.forexValue;
+      this.sendMoney = amount;
+      this.receiveMoney = amount * this.currencyRate;
     }
-    receiveAmountChange(amount: any) {
-      let receiverCountry = this.forexData.filter((c: any) => {
-        return c.senderCountry.toLowerCase() == this.countrySelected.toLowerCase() && c.receiverCountry.toLowerCase() == "usa";
-      });
-      this.sendAmount = amount * receiverCountry[0].forexValue;
+    receiveMoneyChange(amount: any) {
+      this.receiveMoney = amount
+      this.sendMoney = amount / this.currencyRate;
     }
     onContinue() {
-   
-      if (this.selectedPayout && this.countrySelected) {
+      if (this.selectedPayout && this.selectedCountry) {
         this.data = {
-          country: this.countrySelected,
+          country: this.selectedCountry,
           method: this.selectedPayout,
-          sendAmount: this.sendAmount,
-          receiveAmount: this.receiveAmount
+          sendMoney: this.sendMoney,
+          receiveMoney: this.receiveMoney
         }
         localStorage.setItem("data", JSON.stringify(this.data));
-        var d = localStorage.getItem("data");
-        console.log(JSON.parse(d));
-        this.route.navigate(['/receiverDetails']);
+        this.route.navigate(['/receiver']);
       }
       else {
         alert("Please select payout method or country");
@@ -116,7 +94,6 @@ export class SendMoneyComponent implements OnInit {
     }
     ngOnChange(): void {
       this.showCountry = true;
-      console.log("trfk");
     }
 
 }

@@ -1,0 +1,254 @@
+*:focus {
+    outline: none;
+}
+
+h6 {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 18px;
+    line-height: 1.231;
+    font-family: sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+.receiver{
+    width: 60%;
+    margin: auto; 
+}
+
+.receiver-text{
+    width: 100%;
+}
+
+
+.receiver-form{
+    width: 100%;
+    margin: 5% auto;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 30px;
+  }
+
+  .receiver-form>form {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+  }
+
+  .receiver-form>form>button {
+    margin-top: 20px;
+    background-color: #045F86;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    height: 50px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .receiver-name{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .receiver-first-name,.receiver-middle-name,.receiver-last-name{
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 0 none grey;
+    border-bottom: 1px solid grey;
+    background-color: #fff;
+    height: 60px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  
+
+  .receiver-first-name>label,.receiver-middle-name>label,.receiver-last-name>label{
+    width: 100%;
+    color: #595959;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0px 5px;
+  }
+
+  .receiver-first-name>input,.receiver-middle-name>input,.receiver-last-name>input{
+    width: 80%;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+  }
+
+  .email,.phone-number{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 0 none grey;
+    border-bottom: 1px solid grey;
+    background-color: #fff;
+    height: 60px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .email>label,.phone-number>label{
+    width: 100%;
+    color: #595959;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0px 5px;
+  }
+
+  .email>input,.phone-number>input{
+    width: 80%;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+  }
+
+  .bank,.wallet{
+    margin-top: 45px;
+    background: #f3faff;
+  }
+
+  .bank-details,.wallet-details{
+    background: #fff;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .bank-name,.account-number,.reenter-account{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 0 none grey;
+    border-bottom: 1px solid grey;
+    background-color: #fff;
+    height: 60px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  
+  .bank-name>label,.account-number>label,.reenter-account>label{
+    width: 100%;
+    color: #595959;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0px 5px;
+  }
+
+  .bank-name>input,.account-number>input,.reenter-account>input{
+    width: 80%;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+  }
+
+  .wallet-provider{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 0 none grey;
+    border-bottom: 1px solid grey;
+    background-color: #fff;
+    height: 60px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .wallet-provider>label{
+    width: 100%;
+    color: #595959;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0px 5px;
+  }
+
+  .wallet-provider>input{
+    width: 80%;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+  }
+
+  .wallet-information{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .wallet-number{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 0 none grey;
+    border-bottom: 1px solid grey;
+    background-color: #fff;
+    height: 60px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .wallet-number>label{
+    width: 100%;
+    color: #595959;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0px 5px;
+  }
+
+  .wallet-number>input{
+    width: 80%;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+  }
+
+  .wallet-code{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 0 none grey;
+    border-bottom: 1px solid grey;
+    background-color: #fff;
+    height: 60px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .wallet-code>label{
+    width: 100%;
+    color: #595959;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0px 5px;
+  }
+
+  .wallet-code>select{
+    width: 80%;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+  }
+
+  

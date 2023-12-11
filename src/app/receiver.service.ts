@@ -34,6 +34,8 @@ export class ReceiverService {
     return this.http.put<any>(`${this.apiUrl}/receivers/${receiverId}`, receiverData);
   }
  
-  
+  postFormData(combinedData: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/receiverDetails`, combinedData);
+  }
  
 }

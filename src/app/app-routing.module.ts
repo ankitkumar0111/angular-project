@@ -7,6 +7,7 @@ import { AuthGuard } from './auth.guard';
 import { EditReceiverComponent } from './edit-receiver/edit-receiver.component';
 import { AddReceiverComponent } from './add-receiver/add-receiver.component';
 import { SendMoneyComponent } from './send-money/send-money.component';
+import { ReceiverComponent } from './receiver/receiver.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,14 @@ const routes: Routes = [
 {
   path: 'send',
   component: SendMoneyComponent
+},
+{
+  path:'receiver',
+  component: ReceiverComponent,
+  canActivate: [AuthGuard],
+  // children: [
+  //   { path: 'add', component: AddReceiverComponent },
+  // ]
 },
   {
     path:'myreceiver',

@@ -13,6 +13,7 @@ import { AddReceiverComponent } from './add-receiver/add-receiver.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditReceiverComponent } from './edit-receiver/edit-receiver.component';
 import { SendMoneyComponent } from './send-money/send-money.component';
+import { ReceiverComponent } from './receiver/receiver.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SendMoneyComponent } from './send-money/send-money.component';
     MyReceiverComponent,
     AddReceiverComponent,
     EditReceiverComponent,
-    SendMoneyComponent
+    SendMoneyComponent,
+    ReceiverComponent
   ],
   imports: [
     BrowserModule,
