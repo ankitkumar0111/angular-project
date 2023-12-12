@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReceiverService } from '../receiver.service';
+import { CombinedData } from '../combined-data.model';
+import { matchAccountNumbers } from '../validators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-receiver',
@@ -12,7 +15,8 @@ export class ReceiverComponent implements OnInit {
   receiverForm: FormGroup;
   selectedPayout: string;
 
-  constructor(private formBuilder: FormBuilder, private receiverService: ReceiverService) {}
+
+  constructor(private formBuilder: FormBuilder, private receiverService: ReceiverService,private route: Router) {}
 
   ngOnInit(): void {
     this.receiverForm = this.formBuilder.group({
@@ -28,7 +32,7 @@ export class ReceiverComponent implements OnInit {
       walletProvider: [''],
       walletCountryCode: [''],
       mobileNumber: [''],
-    });
+    }, { validators: matchAccountNumbers });
 
     const localStorageData = localStorage.getItem('data');
     if (localStorageData) {
@@ -52,6 +56,7 @@ export class ReceiverComponent implements OnInit {
         mobileNumber: parsedData.mobileNumber,
       });
     }
+    // Add an 'else if' block for 'cash' here if needed
   }
 
   onSubmit(): void {
@@ -61,8 +66,19 @@ export class ReceiverComponent implements OnInit {
       
       if (localStorageData) {
         const localStorageParsed = JSON.parse(localStorageData);
-        let combinedData = { ...localStorageParsed };
-  
+        let combinedData:CombinedData = {
+          country: localStorageParsed.country,
+          method: localStorageParsed.method,
+          sendMoney: localStorageParsed.sendMoney,
+          receiveMoney: localStorageParsed.receiveMoney,
+          firstName: formData.firstName,
+          middleName: formData.middleName,
+          lastName: formData.lastName,
+          email: formData.email,
+          countryCode: formData.countryCode,
+          phoneNumber: formData.phoneNumber,
+        };
+
         if (localStorageParsed.method === 'bank') {
           combinedData = {
             ...combinedData,
@@ -77,25 +93,23 @@ export class ReceiverComponent implements OnInit {
             walletCountryCode: formData.walletCountryCode,
             mobileNumber: formData.mobileNumber,
           };
-         
+        } else if (localStorageParsed.method === 'cash') {
+        combinedData = {...combinedData}
         }
-        else if(localStorageParsed.method === 'cash'){
-          combinedData= {...combinedData}
-        }
-  
+
         this.receiverService.postFormData(combinedData)
           .subscribe(
             (response) => {
               console.log('Combined data submitted successfully!', response);
+              this.route.navigate(['/review']);
             },
             (error) => {
               console.error('Error occurred while submitting combined data:', error);
             }
           );
       }
-    }  else {
-      console.log('Form is invalid. Please fill in all required fields.')
+    } else {
+      console.log('Form is invalid. Please fill in all required fields.');
     }
   }
-
 }

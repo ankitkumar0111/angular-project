@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditReceiverComponent } from './edit-receiver/edit-receiver.component';
 import { SendMoneyComponent } from './send-money/send-money.component';
 import { ReceiverComponent } from './receiver/receiver.component';
+import { ReviewPageComponent } from './review-page/review-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReceiverComponent } from './receiver/receiver.component';
     AddReceiverComponent,
     EditReceiverComponent,
     SendMoneyComponent,
-    ReceiverComponent
+    ReceiverComponent,
+    ReviewPageComponent
   ],
   imports: [
     BrowserModule,

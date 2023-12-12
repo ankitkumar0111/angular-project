@@ -1,0 +1,29 @@
+.review{
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.first-line{
+    margin-top: 28px;
+    font-weight: 400;
+    font-size: 19px;
+}
+
+.details{
+    display: flex;
+}
+
+.flag-name{
+    display: flex;
+}
+
+.flag-name>img{
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    padding: 10px;
+}
+

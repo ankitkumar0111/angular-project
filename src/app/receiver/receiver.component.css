@@ -12,6 +12,10 @@ h6 {
     margin-bottom: 20px;
   }
 
+  h2{
+    margin-top: 15px;
+  }
+
 .receiver{
     width: 60%;
     margin: auto; 
@@ -19,6 +23,15 @@ h6 {
 
 .receiver-text{
     width: 100%;
+}
+
+.first-line,.second-line,.third-line{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.note{
+    font-weight: 700;
 }
 
 

@@ -8,6 +8,7 @@ import { EditReceiverComponent } from './edit-receiver/edit-receiver.component';
 import { AddReceiverComponent } from './add-receiver/add-receiver.component';
 import { SendMoneyComponent } from './send-money/send-money.component';
 import { ReceiverComponent } from './receiver/receiver.component';
+import { ReviewPageComponent } from './review-page/review-page.component';
 
 
 const routes: Routes = [
@@ -32,9 +33,11 @@ const routes: Routes = [
   path:'receiver',
   component: ReceiverComponent,
   canActivate: [AuthGuard],
-  // children: [
-  //   { path: 'add', component: AddReceiverComponent },
-  // ]
+},
+{
+path:'review',
+component: ReviewPageComponent,
+canActivate: [AuthGuard],
 },
   {
     path:'myreceiver',
