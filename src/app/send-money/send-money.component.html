@@ -47,21 +47,21 @@
             <span *ngIf="selectedPayout==='cash'">
               <div class="green-tick"><i class="bi bi-check-lg"></i></div>
             </span>
-            <div><img src="assets/images/cash-on-delivery.png" class="payout-images" alt=""></div>
+            <div><img src="" class="payout-images" alt=""></div>
             <p>Cash pickup</p>
           </div>
           <div [ngClass]="selectedPayout==='bank'?'selectedCard':'nonselectedCard'" (click)="payoutMethod('bank')">
             <span *ngIf="selectedPayout==='bank'">
               <div class="green-tick"><i class="bi bi-check-lg"></i></div>
             </span>
-            <div #child><img src="assets/images/bank.png" class="payout-images" alt=""></div>
+            <div #child><img src="" class="payout-images" alt=""></div>
             <p>Bank Acount</p>
           </div>
           <div [ngClass]="selectedPayout==='wallet'?'selectedCard':'nonselectedCard'" (click)="payoutMethod('wallet')">
             <span *ngIf="selectedPayout==='wallet'">
               <div class="green-tick"><i class="bi bi-check-lg"></i></div>
             </span>
-            <div><img src="assets/images/wallet.png" class="payout-images" alt=""></div>
+            <div><img src="" class="payout-images" alt=""></div>
             <p>Mobile Wallet</p>
           </div>
         </div>
@@ -76,7 +76,7 @@
           <span>
             <div class="green-tick"><i class="bi bi-check-lg"></i></div>
           </span>
-          <div><img src="assets/images/cash-on-delivery.png" class="payout-images" alt=""></div>
+          <div><img src="" class="payout-images" alt=""></div>
           <p>Cash</p>
         </div>
       </div>

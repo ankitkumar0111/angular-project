@@ -3,7 +3,7 @@
     margin: 20px auto;
     background-color: #fff;
     box-sizing: border-box;
-    padding: 30px;
+    padding: 20px;
 }
 
 .first-line{
@@ -13,7 +13,15 @@
 }
 
 .details{
+    margin-top: 50px;
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sending-details{
+    width: 50%;
+    margin-right: 50px;
 }
 
 .flag-name{
@@ -26,4 +34,26 @@
     object-fit: cover;
     padding: 10px;
 }
+
+.receiving-details{
+    width: 50%;
+}
+
+h4{
+    padding: 15px;
+}
+
+.country{
+margin-top: 80px;
+}
+
+.credit-card{
+    display: flex;
+    margin-top: 15px;
+}
+
+.credit-card-details{
+    margin-left: 20px;
+}
+
 

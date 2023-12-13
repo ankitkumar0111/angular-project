@@ -56,7 +56,6 @@ export class ReceiverComponent implements OnInit {
         mobileNumber: parsedData.mobileNumber,
       });
     }
-    // Add an 'else if' block for 'cash' here if needed
   }
 
   onSubmit(): void {
